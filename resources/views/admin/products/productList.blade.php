@@ -192,8 +192,9 @@
           </td>
           <td>{{ $product->brand->name ?? 'Không có thương hiệu' }}</td>
           <td>
-            <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning btn-sm">
-                <i class="bi bi-pencil-square"></i> Sửa
+            <a href="{{ route('products.edit', $product->id) }}"
+            class="btn btn-sm btn-soft-secondary me-1">
+            <i class="bx bx-edit fs-16"></i>
             </a>
             <a href="{{ route('products.productct', $product->id) }}" class="btn btn-warning btn-sm">
                 <i class="bi bi-pencil-square"></i> Chi tiết sp
@@ -201,9 +202,10 @@
             <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="d-inline">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger btn-sm" 
+                <button type="submit" class="btn btn-sm btn-soft-danger" 
                   onclick="return confirm('Bạn có chắc chắn muốn xóa thương hiệu này không?')">
-                    Xóa
+                 
+                    <i class="bx bx-trash fs-16"></i>
                 </button>
             </form>
           </td>
